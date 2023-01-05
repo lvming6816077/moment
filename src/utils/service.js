@@ -55,15 +55,7 @@ function get (url, params = {}) {
     params
   })
 }
-function getNoHeader (url, params = {}) {
-  // ssr的请求直接走服务端的地址
-  return service({
-    url: 'http://localhost:3000' + baseURL + url,
-    method: 'get',
 
-    params
-  })
-}
 
 // 封装post请求
 function post (url, data = {}) {
@@ -97,7 +89,6 @@ export default {
   get,
   post,
   put,
-  getNoHeader,
   baseURL,
   baseServer,
   token: getCookie('token')

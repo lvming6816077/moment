@@ -31,8 +31,7 @@ const props = defineProps({
 const emit = defineEmits(['publish', 'showBottom', 'uploaded', 'hideBottomOnPanel'])
 
 let currentData = reactive({})
-let panelShow = ref(false)
-let uploader = ref(null)
+
 let input = ref(null)
 
 
@@ -75,25 +74,7 @@ const onblur = () => {
     }, 90)
 }
 
-const onfocus = () => {
-    // 这段代码用来获取键盘高度，所以必须满足键盘在页面底部noplus代表没有底部的操作面板
-    if (!props.option.noPlus) {
-        setTimeout(() => {
-            // 键盘在页面底部时在获取
-            if (!panelShow.value) {
-                // 键盘呼起前剪去键盘呼起后
-                let kh = window.windowHeightOrgin - window.innerHeight
-                if (kh > 0) {
-                    // 由于一些webview上下底部有导航栏，所以我们需要剪去这部分高度
-                    window.keyboardHeight = kh - (window.screen.height - window.windowHeightOrgin)
-                    // weui.toast(window.windowHeightOrgin +'xx'+ window.innerHeight + 'yy'+(window.screen.height - window.windowHeightOrgin))
-                }
-            }
-            // 通知父组件隐藏掉图片操作面板
-            emit('hideBottomOnPanel')
-        }, 200)
-    }
-}
+
 </script>
 
 <style scoped>

@@ -19,7 +19,7 @@ const store = useStore()
 let headerClass = ref('')
 
 onMounted(() => {
-    // 使用EventBus 监听外界传来的动画事件
+    // 使用mitt 监听外界传来的动画事件
     mitt.on('showHeader', () => {
         headerClass.value = 'show'
     })

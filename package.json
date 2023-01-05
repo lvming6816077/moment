@@ -7,8 +7,10 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "autoprefixer": "^10.4.13",
     "axios": "^1.1.2",
     "mitt": "^3.0.0",
+    "postcss-px-to-viewport": "^1.1.1",
     "vue": "^3.2.13",
     "vue-router": "^4.1.5",
     "vuex": "^4.0.2"

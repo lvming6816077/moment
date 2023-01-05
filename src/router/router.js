@@ -41,15 +41,13 @@ const router = createRouter({
     {
       path: '/changenickname/:name',
       name: 'changenickname',
-      component: () => import(/* webpackChunkName: "changenickname" */ '../pages/changenickname')
+      component: () => import('../pages/changenickname')
     },
     {
       path: '/changedesc/:desc',
       name: 'changedesc',
-      component: () => import(/* webpackChunkName: "changenickname" */ '../pages/changedesc')
+      component: () => import( '../pages/changedesc')
     }
-
-
   ],
   scrollBehavior : (to, from, savedPosition) => {
     if (savedPosition) {

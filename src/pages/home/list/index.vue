@@ -46,8 +46,12 @@ onMounted(() => {
 })
 
 const refresh = () => {
+    store.dispatch('setWecircleDataList', { first: true })
     fetchData()
 }
+defineExpose({
+    refresh:refresh
+})
 
 const fetchData = async () => {
     // 是否可以发起下一次滚动加载请求的标志位

@@ -1,8 +1,7 @@
 
 <template>
     <div class="container">
-        <!-- <pullRefreshView @onRefresh="onRefresh"> -->
-        <div>
+        <pullRefreshView @onRefresh="onRefresh">
         <headerbar></headerbar>
         <div class="top-img" :style="topImgStyle" @click="changeBg"></div>
         <div style="display: none" id="uploaderBg">
@@ -25,8 +24,7 @@
         }" ref="inputBarWrapRef" class="input-wrap android" v-if="androidInput">
             <inputBar ref="inputBarRef" :option="inputBarOption" @publish="publish"></inputBar>
         </div>
-        <!-- </pullRefreshView> -->
-    </div>
+        </pullRefreshView>
     </div>
 </template>
 
@@ -123,7 +121,6 @@ const publish = async (data) => {
     // 存入数据库
     let resp = await service.post("likecomment/addcomment", {
         content: data.value,
-        // userId: this.$store.state.currentUser._id,
         postId: data.data.id,
     });
 
@@ -172,8 +169,6 @@ onMounted(() => {
                         currentData.pageY -
                         window.keyboardHeight -
                         (os.isIpP ? 45 : 5);
-                    // weui.toast(window.keyboardHeight)
-                    // weui.toast(window.innerHeight +'yy'+window.keyboardHeight)
 
                     // 通过调用window.scroll在将页面顶回去一定距离
                     window.scroll(0, y);

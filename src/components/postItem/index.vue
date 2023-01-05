@@ -127,7 +127,7 @@ const props = defineProps({
     },
 });
 
-const goPersonPage = () => {
+const goPersonPage = (_id) => {
 
     var id = _id
     // 如果是当前用户点击当前的本人的头像 暂不跳转

@@ -20,16 +20,16 @@ const transObj = reactive({
 })
 
 const router = useRouter()
-const route = useRoute()
+
 
 onMounted(()=>{
     window.windowHeightOrgin = window.innerHeight
     window.keyboardHeight = os.getKeyBoardHeightDefault() - (window.screen.height - window.windowHeightOrgin)
 })
 
-
+const route = useRoute()
 watch(()=>route.name,(to, from)=>{
-    // console.log(to,from)
+
     // 首次进入首页
     if (!from) {
         transObj.duration = 0
