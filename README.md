@@ -1,7 +1,7 @@
 
 Vue3移动web实现微信朋友圈
 # moment
-书籍《Vue3移动Web开发与性能优化实战》实战项目源码
+书籍[《Vue3移动Web开发与性能优化实战》](https://item.jd.com/14049492.html)实战项目源码
 
 
 ## 项目技术栈
